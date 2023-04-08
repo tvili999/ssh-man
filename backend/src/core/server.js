@@ -1,4 +1,5 @@
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 const express = require("express");
 const morgan = require("morgan");
 
@@ -8,6 +9,7 @@ module.exports = (container) => container.configure(
 
         server.use(bodyParser.json())
         server.use(morgan('dev'))
+        server.use(cookieParser())
 
         return server;
     }),

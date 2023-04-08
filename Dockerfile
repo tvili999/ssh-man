@@ -22,4 +22,4 @@ COPY backend/ .
 
 COPY --from=frontend-build /app/dist /app/static
 
-CMD "yarn start:prod"
+CMD yarn start:prod

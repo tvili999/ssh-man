@@ -1,4 +1,6 @@
 module.exports = container => container.configure(
     require("./auth"),
-    require("./static")
+    require("./keys"),
+    require("./static"),
+    require("./servers")
 )

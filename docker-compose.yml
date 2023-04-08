@@ -4,7 +4,6 @@ services:
     image: node:latest
     volumes:
       - ./backend:/app
-      - storage:/db
     working_dir: /app
     user: '1000'
     command: '/bin/sh -c "yarn && yarn dev"'
@@ -18,6 +17,3 @@ services:
     working_dir: /app
     user: '1000'
     command: '/bin/sh -c "yarn && yarn dev"'
-
-volumes:
-  storage:
