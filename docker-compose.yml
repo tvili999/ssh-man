@@ -1,0 +1,23 @@
+version: '3'
+services:
+  backend:
+    image: node:latest
+    volumes:
+      - ./backend:/app
+      - storage:/db
+    working_dir: /app
+    user: '1000'
+    command: '/bin/sh -c "yarn && yarn dev"'
+
+  frontend:
+    image: node:latest
+    volumes:
+      - ./frontend:/app
+    ports:
+      - 5173:5173
+    working_dir: /app
+    user: '1000'
+    command: '/bin/sh -c "yarn && yarn dev"'
+
+volumes:
+  storage:
